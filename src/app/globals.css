@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html, body {
+  overflow-x: hidden;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -76,6 +80,16 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+   --luxury-gold: #d4af37;
+    --luxury-gold-light: #f0d98c;
+    --luxury-dark: #0e0e0e; /* Darker for more contrast */
+    --luxury-dark-light: #1b1b1b; /* Slightly lighter for cards */
+    --luxury-text-light: #faf9f6; /* Warm white */
+    --luxury-text-muted: #b3a87e; /* Muted gold tone */
+    --luxury-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    --luxury-radius: 12px;
+    --luxury-transition: all 0.3s ease-in-out;
 }
 
 .dark {

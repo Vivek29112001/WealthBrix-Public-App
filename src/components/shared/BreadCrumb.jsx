@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react"
 
 export default function Breadcrumb({ parentComponent, parentRoute, childComponent }) {
     return (
-        <div className="bg-[var(--luxury-dark-light)] p-3 rounded-md shadow-md mb-4">
+        <div className="p-3 rounded-md shadow-md mb-4">
             <div className="flex items-center gap-2 text-sm">
                 <Link href="/" className="luxury-hover">Home</Link>
                 <ChevronRight size={14} className="text-[var(--luxury-gold)]" />
