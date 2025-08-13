@@ -42,7 +42,7 @@ export default function AnimatedBackgroundSection() {
             <div className="absolute inset-0 bg-black/50 z-20"></div>
 
             {/* Foreground Content */}
-            <div className="relative z-30 h-full flex flex-col items-center justify-center text-center text-white px-4">
+            <div className="relative z-30 h-full flex flex-col items-center justify-center text-center text-white px-1">
                 <h1 className="text-5xl sm:text-6xl font-bold drop-shadow-xl">
                     Apna Dream Home Yahin Hai
                 </h1>
