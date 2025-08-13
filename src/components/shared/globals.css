@@ -1,0 +1,65 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.luxury-hover {
+  transition: var(--luxury-transition);
+}
+
+.luxury-hover:hover {
+  color: var(--luxury-gold);
+  transform: translateY(-2px);
+}
+
+.luxury-card {
+  background: var(--luxury-dark-light);
+  border-radius: var(--luxury-radius);
+  box-shadow: var(--luxury-shadow);
+  transition: var(--luxury-transition);
+}
+
+.luxury-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+}
+
+.luxury-btn {
+  background-color: var(--luxury-gold);
+  color: var(--luxury-dark);
+  padding: 10px 20px;
+  border-radius: var(--luxury-radius);
+  font-weight: bold;
+  transition: var(--luxury-transition);
+}
+
+.luxury-btn:hover {
+  background-color: var(--luxury-gold-light);
+  transform: translateY(-2px);
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.luxury-card {
+  background: var(--luxury-dark-light);
+  border-radius: var(--luxury-radius);
+  box-shadow: var(--luxury-shadow);
+  transition: var(--luxury-transition);
+}
+
+.luxury-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out;
+}

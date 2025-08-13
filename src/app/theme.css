@@ -1,0 +1,77 @@
+  :root {
+    --luxury-gold: #d4af37;
+    --luxury-gold-light: #f0d98c;
+    --luxury-dark: #0e0e0e; /* Darker for more contrast */
+    --luxury-dark-light: #1b1b1b; /* Slightly lighter for cards */
+    --luxury-text-light: #faf9f6; /* Warm white */
+    --luxury-text-muted: #b3a87e; /* Muted gold tone */
+    --luxury-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    --luxury-radius: 12px;
+    --luxury-transition: all 0.3s ease-in-out;
+  }
+
+  body {
+    background-color: var(--luxury-dark);
+    color: var(--luxury-text-light);
+    font-family: "Poppins", sans-serif;
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Hover animations for text links */
+  .luxury-hover {
+    transition: var(--luxury-transition);
+  }
+
+  .luxury-hover:hover {
+    color: var(--luxury-gold);
+    transform: translateY(-2px);
+  }
+
+  /* Card styling */
+  .luxury-card {
+    background: var(--luxury-dark-light);
+    border-radius: var(--luxury-radius);
+    box-shadow: var(--luxury-shadow);
+    padding: 1.5rem;
+    transition: var(--luxury-transition);
+    color: var(--luxury-text-light);
+  }
+
+  .luxury-card h3,
+  .luxury-card h4 {
+    color: var(--luxury-gold);
+  }
+
+  .luxury-card p {
+    color: var(--luxury-text-muted);
+  }
+
+  .luxury-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+  }
+
+  /* Button styling */
+  .luxury-btn {
+    background-color: var(--luxury-gold);
+    color: var(--luxury-dark);
+    padding: 10px 20px;
+    border-radius: var(--luxury-radius);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: var(--luxury-transition);
+  }
+
+  .luxury-btn:hover {
+    background-color: var(--luxury-gold-light);
+    transform: translateY(-2px);
+  }
+
+  /* Muted small text */
+  .luxury-muted {
+    color: var(--luxury-text-muted);
+  }
