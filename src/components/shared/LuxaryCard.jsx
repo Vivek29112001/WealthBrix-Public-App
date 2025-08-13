@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton" // ShadCN loader
 import { AnimatePresence, motion } from "framer-motion"
 import { FaHeart, FaMapMarkerAlt, FaBed, FaBath, FaRulerCombined, FaHome } from "react-icons/fa"
 
@@ -18,6 +19,22 @@ export default function LuxuryCard({
     const router = useRouter()
     const [liked, setLiked] = useState(likedProp)
     const [imageIndex, setImageIndex] = useState(0)
+
+    // If no property data, show loader
+    if (!property) {
+        return (
+            <Card className="overflow-hidden rounded-2xl shadow-lg border border-gray-100 p-4">
+                <Skeleton className="w-full aspect-[16/9] rounded-lg mb-4" />
+                <Skeleton className="h-6 w-3/4 mb-2" />
+                <Skeleton className="h-4 w-1/2 mb-4" />
+                <div className="flex gap-2">
+                    <Skeleton className="h-8 w-16 rounded-full" />
+                    <Skeleton className="h-8 w-16 rounded-full" />
+                    <Skeleton className="h-8 w-16 rounded-full" />
+                </div>
+            </Card>
+        )
+    }
 
     const handleNextImage = () => {
         if (!property?.images?.length) return
@@ -59,7 +76,7 @@ export default function LuxuryCard({
                 </motion.div>
             )}
 
-            {/* Image Section (responsive aspect) */}
+            {/* Image Section */}
             <div
                 className="relative w-full aspect-[16/9] sm:aspect-[3/2] md:aspect-[16/9] cursor-pointer overflow-hidden"
                 onClick={(e) => {
@@ -86,19 +103,11 @@ export default function LuxuryCard({
                 {/* Status Badge */}
                 {property?.status && (
                     <div
-                        className="
-      absolute top-4 left-4 
-      bg-red-600 
-      text-white text-[10px] font-extrabold tracking-widest uppercase 
-      px-3 py-1 rounded-full 
-      shadow-lg drop-shadow-md backdrop-blur-sm z-40
-      border border-white/20
-    "
+                        className="absolute top-4 left-4 bg-red-600 text-white text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg drop-shadow-md backdrop-blur-sm z-40 border border-white/20"
                     >
                         🏷 {property.status}
                     </div>
                 )}
-
 
                 {/* Price Tag */}
                 {property?.price && (
@@ -147,7 +156,7 @@ export default function LuxuryCard({
                     )}
                 </div>
 
-                {/* Specs row from dummy data */}
+                {/* Specs */}
                 <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-gray-700">
                     {property?.bedrooms != null && (
                         <span className="inline-flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-full border">
