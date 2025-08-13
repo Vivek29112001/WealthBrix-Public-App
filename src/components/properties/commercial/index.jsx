@@ -24,8 +24,8 @@ const CommercialProperties = [
         bathrooms: 3,
         area: "1850 sq.ft",
         status: "Ready to Move",
-        images: ["/assets/apartment/p1.jpg", "/assets/apartment/p1-2.jpg", "/assets/apartment/p1-3.jpg"],
-        link: "/properties/residential/1",
+        images: ["/assets/apartment/p1.jpg", "/assets/apartment/p1.jpg", "/assets/apartment/p1.jpg"],
+        // link: "/properties/residential/1",
     },
     {
         id: 2,
@@ -37,8 +37,8 @@ const CommercialProperties = [
         bathrooms: 4,
         area: "3200 sq.ft",
         status: "Under Construction",
-        images: ["/assets/apartment/p2.jpg", "/assets/apartment/p2-2.jpg"],
-        link: "/properties/residential/2",
+        images: ["/assets/apartment/p2.jpg", "/assets/apartment/p2.jpg",],
+        // link: "/properties/residential/2",
     },
     {
         id: 3,
@@ -51,7 +51,7 @@ const CommercialProperties = [
         area: "1050 sq.ft",
         status: "Ready to Move",
         images: ["/assets/apartment/p3.jpg"],
-        link: "/properties/residential/3",
+        // link: "/properties/residential/3",
     },
     {
         id: 4,
@@ -63,8 +63,8 @@ const CommercialProperties = [
         bathrooms: 4,
         area: "1050 sq.ft",
         status: "Ready to Move",
-        images: ["/assets/apartment/p4.jpg", "/assets/apartment/p4-2.jpg"],
-        link: "/properties/residential/4",
+        images: ["/assets/apartment/p4.jpg", "/assets/apartment/p4.jpg"],
+        // link: "/properties/residential/4",
     },
 ];
 
