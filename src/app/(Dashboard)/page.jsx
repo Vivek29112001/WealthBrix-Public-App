@@ -62,23 +62,12 @@ export default function HeaderNavbar() {
                     {/* Logo */}
                     <div className="flex items-center">
                         <Image
-                            src="/assets/logo.png"
+                            src="/assets/logo.svg"
                             alt="Logo"
                             width={60}
                             height={60}
-                            className="h-14 w-20 object-contain drop-shadow-lg"
+                            className="h-15 w-120 object-contain drop-shadow-lg"
                         />
-                        <div className="flex flex-col leading-tight">
-                            <span className="text-[rgb(250,242,192)] text-2xl sm:text-3xl font-extrabold tracking-wide uppercase">
-                                Wealth{" "}
-                                <span className="text-[rgba(121,64,11,1)] font-extrabold">
-                                    Brix
-                                </span>
-                            </span>
-                            <span className="text-gray-300 text-xs italic tracking-wide">
-                                Building future, brick by brick
-                            </span>
-                        </div>
                     </div>
 
                     {/* Desktop Navigation */}

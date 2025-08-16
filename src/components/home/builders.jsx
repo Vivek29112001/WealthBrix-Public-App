@@ -68,11 +68,11 @@ export default function OurBuilders() {
                     transition={{ delay: 0.5, duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div className="flex gap-12 animate-business-marquee">
+                    <div className="flex gap-5 animate-business-marquee">
                         {logoList.map((b, idx) => (
                             <div
                                 key={idx}
-                                className="min-w-[150px] flex-shrink-0 flex items-center justify-center transform transition duration-300 hover:scale-105 hover:drop-shadow-lg"
+                                className="min-w-[150px] flex-shrink-0 flex items-center justify-center transform transition duration-200 hover:scale-105 hover:drop-shadow-lg"
                             >
                                 <Image
                                     src={b.logo}

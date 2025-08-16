@@ -6,15 +6,15 @@ import LuxuryCard from "@/components/shared/LuxaryCard"; // <-- import here
 import { motion, AnimatePresence } from "framer-motion";
 
 const properties = [
-    { id: 1, name: "Luxury Villa", location: "Mumbai, India", price: "₹2.5 Cr", status: "For Sale", type: "Villa", images: ["/assets/apartment/a1.jpg"], companyLogo: "/assets/logo.png" },
-    { id: 2, name: "Modern Apartment", location: "Pune, India", price: "₹95 Lakh", status: "For Sale", type: "Apartment", images: ["/assets/apartment/p1.jpg"], companyLogo: "/assets/logo.png" },
-    { id: 3, name: "Beachfront Villa", location: "Goa, India", price: "₹4.8 Cr", status: "For Sale", type: "Villa", images: ["/assets/apartment/a2.jpg"], companyLogo: "/assets/logo.png" },
-    { id: 4, name: "City View Apartment", location: "Bengaluru, India", price: "₹1.2 Cr", status: "For Sale", type: "Apartment", images: ["/assets/apartment/p2.jpg"], companyLogo: "/assets/logo.png" },
-    { id: 5, name: "Luxury Penthouse", location: "Delhi, India", price: "₹3.5 Cr", status: "For Sale", type: "Penthouse", images: ["/assets/apartment/a3.jpg"], companyLogo: "/assets/logo.png" },
-    { id: 6, name: "Garden Facing Apartment", location: "Chandigarh, India", price: "₹85 Lakh", status: "For Sale", type: "Apartment", images: ["/assets/apartment/p3.jpg"], companyLogo: "/assets/logo.png" },
-    { id: 7, name: "Mountain View Cottage", location: "Manali, India", price: "₹1.1 Cr", status: "For Sale", type: "Cottage", images: ["/assets/apartment/a4.jpg"], companyLogo: "/assets/logo.png" },
-    { id: 8, name: "Lake View Villa", location: "Udaipur, India", price: "₹2.9 Cr", status: "For Sale", type: "Villa", images: ["/assets/apartment/p4.jpg"], companyLogo: "/assets/logo.png" },
-    { id: 9, name: "Prime Plot", location: "Jaipur, India", price: "₹60 Lakh", status: "For Sale", type: "Plot", images: ["/assets/apartment/p1.jpg"], companyLogo: "/assets/logo.png" },
+    { id: 1, name: "Luxury Villa", location: "Mumbai, India", price: "₹2.5 Cr", status: "For Sale", type: "Villa", images: ["/assets/apartment/a1.jpg"], companyLogo: "/assets/builders/bhutani.png" },
+    { id: 2, name: "Modern Apartment", location: "Pune, India", price: "₹95 Lakh", status: "For Sale", type: "Apartment", images: ["/assets/apartment/p1.jpg"], companyLogo: "/assets/builders/ats.png" },
+    { id: 3, name: "Beachfront Villa", location: "Goa, India", price: "₹4.8 Cr", status: "For Sale", type: "Villa", images: ["/assets/apartment/a2.jpg"], companyLogo: "/assets/builders/Gaur.png" },
+    { id: 4, name: "City View Apartment", location: "Bengaluru, India", price: "₹1.2 Cr", status: "For Sale", type: "Apartment", images: ["/assets/apartment/p2.jpg"], companyLogo: "/assets/builders/max.png" },
+    { id: 5, name: "Luxury Penthouse", location: "Delhi, India", price: "₹3.5 Cr", status: "For Sale", type: "Penthouse", images: ["/assets/apartment/a3.jpg"], companyLogo: "/assets/builders/godrej.png" },
+    { id: 6, name: "Garden Facing Apartment", location: "Chandigarh, India", price: "₹85 Lakh", status: "For Sale", type: "Apartment", images: ["/assets/apartment/p3.jpg"], companyLogo: "/assets/builders/mahagun.png" },
+    { id: 7, name: "Mountain View Cottage", location: "Manali, India", price: "₹1.1 Cr", status: "For Sale", type: "Cottage", images: ["/assets/apartment/a4.jpg"], companyLogo: "/assets/builders/supertech.png" },
+    { id: 8, name: "Lake View Villa", location: "Udaipur, India", price: "₹2.9 Cr", status: "For Sale", type: "Villa", images: ["/assets/apartment/p4.jpg"], companyLogo: "/assets/builders/NBCC.png" },
+    { id: 9, name: "Prime Plot", location: "Jaipur, India", price: "₹60 Lakh", status: "For Sale", type: "Plot", images: ["/assets/apartment/p1.jpg"], companyLogo: "/assets/builders/country.png" },
 ];
 
 export default function OurPropertiesDetail() {

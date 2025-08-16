@@ -148,8 +148,8 @@ export default function LuxuryCard({
                             <Image
                                 src={companyLogo || property.companyLogo}
                                 alt="Company Logo"
-                                width={30}
-                                height={30}
+                                width={50}
+                                height={90}
                                 className="object-contain rounded"
                             />
                         </div>
