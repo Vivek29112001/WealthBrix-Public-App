@@ -36,7 +36,7 @@ export default function HeaderNavbar() {
             <div className="w-full text-sm" style={{ backgroundColor: "rgb(209, 168, 121)" }}>
                 <div className="max-w-7xl mx-auto flex justify-between items-center py-2 px-4">
                     <div className="flex items-center gap-2 px-2">
-                        📍 E-144, Sector-63, Noida, (U.P) – 201301
+                        📍 NX One Tower T2, Unit A02,Tech Zone 4, Greater Noida West, (U.P) – 201318
                     </div>
                     <div className="flex gap-4">
                         <Link href="https://instagram.com" target="_blank" className="hover:text-pink-200">
