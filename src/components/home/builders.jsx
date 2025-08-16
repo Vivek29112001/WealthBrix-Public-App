@@ -8,10 +8,13 @@ const builders = [
     { name: "ATS", logo: "/assets/builders/ats.png" },
     { name: "Supertech", logo: "/assets/builders/supertech.png" },
     { name: "Mahagun", logo: "/assets/builders/mahagun.png" },
-    { name: "Gaur", logo: "/assets/builders/gaur.png" },
-    { name: "ATS", logo: "/assets/builders/ats.png" },
-    { name: "Supertech", logo: "/assets/builders/supertech.png" },
-    { name: "Mahagun", logo: "/assets/builders/mahagun.png" },
+    { name: "country", logo: "/assets/builders/country.png" },
+    { name: "Max", logo: "/assets/builders/max.png" },
+    { name: "NBCC", logo: "/assets/builders/NBCC.png" },
+    { name: "bhutani", logo: "/assets/builders/bhutani.png" },
+    { name: "experion", logo: "/assets/builders/experion.png" },
+    { name: "Godrej", logo: "/assets/builders/godrej.png" },
+    { name: "m3m", logo: "/assets/builders/m3m.png" }
 ];
 
 export default function OurBuilders() {

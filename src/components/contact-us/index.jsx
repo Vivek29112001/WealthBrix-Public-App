@@ -95,10 +95,9 @@ export default function ContactUsPage() {
                                         style={{ color: "var(--luxury-gold)" }}
                                     />
                                     <a
-                                        href="tel:+918929053385"
                                         className="hover:underline"
                                     >
-                                        +91 89290 53385
+                                        +91 99719 00065 | +91 92209 30065
                                     </a>
                                 </div>
                                 <div className="flex items-center gap-3">
@@ -107,10 +106,9 @@ export default function ContactUsPage() {
                                         style={{ color: "var(--luxury-gold)" }}
                                     />
                                     <a
-                                        href="mailto:info@truhomes.in"
                                         className="hover:underline"
                                     >
-                                        info@truhomes.in
+                                        vivek@wealthbrix.in
                                     </a>
                                 </div>
                                 <div className="flex items-start gap-3">
@@ -119,8 +117,8 @@ export default function ContactUsPage() {
                                         style={{ color: "var(--luxury-gold)" }}
                                     />
                                     <p>
-                                        19/3, First Floor, Ashok Nagar,
-                                        <br /> New Delhi, Delhi 110018
+                                        Nx One, Tower T2, A02, Tech Xone 4
+                                        <br /> Greater Noida, UttarPradesh 201301
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-3">
@@ -128,7 +126,7 @@ export default function ContactUsPage() {
                                         className="h-5 w-5"
                                         style={{ color: "var(--luxury-gold)" }}
                                     />
-                                    <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                                    <p>Mon - Sun: 9:00 AM - 7:00 PM</p>
                                 </div>
                             </CardContent>
                         </Card>
@@ -146,7 +144,7 @@ export default function ContactUsPage() {
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.063510182973!2d77.08218207463356!3d28.59730767568366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d051d81f6244d%3A0x9e67dfd39fe7b7d2!2sAshok%20Nagar%2C%20New%20Delhi%2C%20Delhi%20110018!5e0!3m2!1sen!2sin!4v1692095658921!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d28023.633458002536!2d77.432393!3d28.6011513!3m2!1i1024!2i768!4f13.1!2m1!1sNx%20One%20Tower%20T2%20A02%20Tech%20Xone%204%20Greater%20Noida%20UttarPradesh%20201301%20map%20location!5e0!3m2!1sen!2sin!4v1755337333829!5m2!1sen!2sin"
                             width="100%"
                             height="250"
                             style={{ border: 0 }}
