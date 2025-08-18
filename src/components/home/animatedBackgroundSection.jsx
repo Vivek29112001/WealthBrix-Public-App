@@ -59,7 +59,7 @@ export default function AnimatedBackgroundSection() {
                 </div>
 
                 {/* Search Bar */}
-                <div className="mt-8 w-full max-w-2xl relative z-30">
+                {/* <div className="mt-8 w-full max-w-2xl relative z-30">
                     <form className="flex flex-col sm:flex-row items-center gap-4 bg-white/90 p-4 rounded-xl shadow-xl backdrop-blur-md">
                         <input
                             type="text"
@@ -73,7 +73,7 @@ export default function AnimatedBackgroundSection() {
                             Search
                         </button>
                     </form>
-                </div>
+                </div> */}
 
                 {/* Stats Section */}
                 <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center text-white">
