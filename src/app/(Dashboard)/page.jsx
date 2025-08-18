@@ -104,23 +104,14 @@ export default function HeaderNavbar() {
                             >
                                 {/* Logo */}
                                 <div className="flex items-center gap-2 mb-6">
-                                    <Image
-                                        src="/assets/logo.png"
-                                        alt="Logo"
-                                        width={50}
-                                        height={50}
-                                        className="h-12 w-auto object-contain"
-                                    />
-                                    <div className="flex flex-col leading-tight">
-                                        <span className="text-[rgb(250,242,192)] text-xl font-extrabold uppercase">
-                                            Wealth{" "}
-                                            <span className="text-[rgba(121,64,11,1)] font-extrabold">
-                                                Brix
-                                            </span>
-                                        </span>
-                                        <span className="text-gray-300 text-xs italic">
-                                            Building future, brick by brick
-                                        </span>
+                                    <div className="flex items-center">
+                                        <Image
+                                            src="/assets/logo.svg"
+                                            alt="Logo"
+                                            width={160}
+                                            height={60}
+                                            className="h-15 w-120 object-contain drop-shadow-lg"
+                                        />
                                     </div>
                                 </div>
 
