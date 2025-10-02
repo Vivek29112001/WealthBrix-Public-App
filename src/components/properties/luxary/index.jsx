@@ -16,57 +16,39 @@ const parsePriceINR = (str) => {
 const luxaryProperties = [
     {
         id: 1,
-        title: "Luxury 3BHK Apartment",
-        location: "Sector 150, Noida",
-        price: "₹ 1.25 Cr",
-        type: "Apartment",
-        bedrooms: 3,
-        bathrooms: 3,
-        area: "1850 sq.ft",
-        status: "Ready to Move",
-        images: ["/assets/apartment/p1.jpg", "/assets/apartment/p1.jpg", "/assets/apartment/p1.jpg"],
-        // link: "/properties/residential/1",
+        title: "Green Valley, Lansdowne",
+        location: "Lansdowne, Uttarakhand",
+        price: "₹ 20 Lakh onwards",
+        type: "Villa & Plot",
+        area: "Starting from 100 Guz",
+        status: "New Launch",
+        description: [
+            "Scenic villa & plot options in lush Lansdowne hills",
+            "Close to nature with modern amenities",
+            "Secure gated community with clubhouse",
+            "Starting from ₹20 Lakh onwards (100 Guz)",
+            "Project Brochure | Basic Price | Luxury Price",
+        ],
+        images: ["/assets/luxury/v1.webp"],
     },
     {
         id: 2,
-        title: "Premium 4BHK Villa",
-        location: "Golf Course Extension, Gurgaon",
-        price: "₹ 3.45 Cr",
-        type: "Villa",
-        bedrooms: 4,
-        bathrooms: 4,
-        area: "3200 sq.ft",
-        status: "Under Construction",
-        images: ["/assets/apartment/p2.jpg", "/assets/apartment/p2.jpg",],
-        // link: "/properties/residential/2",
-    },
-    {
-        id: 3,
-        title: "2BHK Affordable Apartment",
-        location: "Sector 78, Noida",
-        price: "₹ 65 Lakh",
-        type: "Apartment",
-        bedrooms: 2,
-        bathrooms: 2,
-        area: "1050 sq.ft",
-        status: "Ready to Move",
-        images: ["/assets/apartment/p3.jpg"],
-        // link: "/properties/residential/3",
-    },
-    {
-        id: 4,
-        title: "4BHK Affordable Apartment",
-        location: "Sector 78, Noida",
-        price: "₹ 95 Lakh",
-        type: "Apartment",
-        bedrooms: 4,
-        bathrooms: 4,
-        area: "1050 sq.ft",
-        status: "Ready to Move",
-        images: ["/assets/apartment/p4.jpg", "/assets/apartment/p4.jpg"],
-        // link: "/properties/residential/4",
+        title: "SunRise Valley, Lansdowne",
+        location: "Lansdowne, Uttarakhand",
+        price: "₹ 15 Lakh onwards",
+        type: "Villa & Plot",
+        area: "Starting from 100 Guz",
+        status: "New Launch",
+        description: [
+            "Premium villas and plots with sunrise views",
+            "Peaceful living amidst natural beauty",
+            "Well-planned layouts & investment-friendly pricing",
+            "Starting from ₹15 Lakh onwards (100 Guz)",
+        ],
+        images: ["/assets/luxury/v2.avif"],
     },
 ];
+
 
 const SORT_OPTIONS = [
     { value: "default", label: "Default" },
@@ -99,7 +81,7 @@ export default function LuxaryPropertiesPage() {
             <BreadFilterComponent
                 parentComponent="Properties"
                 parentRoute="/properties"
-                childComponent="Residential"
+                childComponent="Luxury"
                 total={total}
                 sortBy={sortBy}
                 setSortBy={setSortBy}

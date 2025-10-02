@@ -9,7 +9,6 @@ const Residential = () => {
     return (
         <PageContainer title="Residential Properties" description="Residential Properties">
             <Breadcrumb
-                // parentComponent="Properties"
                 childComponent={'Residential Properties'} />
             <ResidentialPropertiesPage />
         </PageContainer>

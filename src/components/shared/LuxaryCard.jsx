@@ -143,17 +143,7 @@ export default function LuxuryCard({
                         )}
                     </div>
 
-                    {(companyLogo || property?.companyLogo) && (
-                        <div className="flex-shrink-0">
-                            <Image
-                                src={companyLogo || property.companyLogo}
-                                alt="Company Logo"
-                                width={50}
-                                height={90}
-                                className="object-contain rounded"
-                            />
-                        </div>
-                    )}
+
                 </div>
 
                 {/* Specs */}

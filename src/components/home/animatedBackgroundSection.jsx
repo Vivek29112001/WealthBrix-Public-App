@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { FaMapMarkerAlt, FaHome, FaRupeeSign } from "react-icons/fa"
 import CountUp from "react-countup"
+import Link from "next/link"
 
 const bgImages = [
     // "/assets/bg0.jpg",
@@ -58,50 +59,17 @@ export default function AnimatedBackgroundSection() {
                     </span>
                 </div>
 
-                {/* Search Bar */}
-                {/* <div className="mt-8 w-full max-w-2xl relative z-30">
-                    <form className="flex flex-col sm:flex-row items-center gap-4 bg-white/90 p-4 rounded-xl shadow-xl backdrop-blur-md">
-                        <input
-                            type="text"
-                            placeholder="Search by location, property type, or keyword..."
-                            className="flex-1 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-gray-800"
-                        />
-                        <button
-                            type="submit"
-                            className="px-6 py-2 bg-[rgba(121,64,11,1)] text-white font-semibold rounded-md hover:bg-orange-900 transition"
-                        >
-                            Search
-                        </button>
-                    </form>
-                </div> */}
-
-                {/* Stats Section */}
-                <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center text-white">
-                    <div>
-                        <h2 className="text-3xl sm:text-4xl font-bold">
-                            <CountUp end={50000} duration={3} separator="," />+
-                        </h2>
-                        <p className="mt-2 text-lg text-gray-300">Happy Customers</p>
-                    </div>
-                    <div>
-                        <h2 className="text-3xl sm:text-4xl font-bold">
-                            <CountUp end={100} duration={3} />+
-                        </h2>
-                        <p className="mt-2 text-lg text-gray-300">Awards</p>
-                    </div>
-                    <div>
-                        <h2 className="text-3xl sm:text-4xl font-bold">
-                            <CountUp end={100} duration={3} />+
-                        </h2>
-                        <p className="mt-2 text-lg text-gray-300">Projects</p>
-                    </div>
-                    <div>
-                        <h2 className="text-3xl sm:text-4xl font-bold">
-                            <CountUp end={100} duration={3} />+
-                        </h2>
-                        <p className="mt-2 text-lg text-gray-300">Developers</p>
-                    </div>
+                <div>
+                    <Link
+                        href="/properties/residential"
+                        className="mt-10 inline-block bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 
+               text-white font-semibold text-lg px-8 py-3 rounded-full shadow-xl 
+               hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+                    >
+                        Explore The Properties
+                    </Link>
                 </div>
+
             </div>
         </div>
     )

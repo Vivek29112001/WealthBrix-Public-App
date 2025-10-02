@@ -7,7 +7,6 @@ const Commercial = () => {
     return (
         <PageContainer title="Commercial Properties" description="Commercial Properties">
             <Breadcrumb
-                // parentComponent="Properties"
                 childComponent={'Commercial Properties'} />
             <CommercialPropertiesPage />
         </PageContainer>

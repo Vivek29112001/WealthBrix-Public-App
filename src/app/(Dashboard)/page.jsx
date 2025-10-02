@@ -39,16 +39,10 @@ export default function HeaderNavbar() {
                         📍 NX One Tower T2, Unit A02,Tech Zone 4, Greater Noida West, (U.P) – 201318
                     </div>
                     <div className="flex gap-4">
-                        <Link href="https://instagram.com" target="_blank" className="hover:text-pink-200">
-                            <FaInstagram className="h-5 w-5" />
-                        </Link>
-                        <Link href="https://linkedin.com" target="_blank" className="hover:text-blue-200">
-                            <FaLinkedin className="h-5 w-5" />
-                        </Link>
-                        <Link href="https://facebook.com" target="_blank" className="hover:text-blue-200">
+                        <Link href="https://www.facebook.com/p/Wealth-brix-61574633926093/" target="_blank" className="hover:text-blue-200">
                             <FaFacebook className="h-5 w-5" />
                         </Link>
-                        <Link href="https://youtube.com" target="_blank" className="hover:text-red-300">
+                        <Link href="https://www.youtube.com/@WealthBrix" target="_blank" className="hover:text-red-300">
                             <FaYoutube className="h-5 w-5" />
                         </Link>
                     </div>
@@ -66,31 +60,35 @@ export default function HeaderNavbar() {
                             alt="Logo"
                             width={60}
                             height={60}
-                            className="h-15 w-120 object-contain drop-shadow-lg"
+                            className="h-12 w-100 object-contain drop-shadow-lg"
                         />
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden max-[720px]:hidden sm:flex w-2/4 justify-center space-x-5 text-base font-semibold uppercase tracking-wide">
                         <Link href="/" className="hover:text-orange-400 transition">Home</Link>
+
+                        {/* Properties Dropdown */}
                         <div className="relative group">
                             <div className="flex items-center gap-1 cursor-pointer hover:text-orange-400 transition">
                                 Properties
                                 <ChevronDown size={16} />
                             </div>
                             <div className="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg 
-                                opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 
-                                transition-all duration-300 ease-in-out z-50">
+      opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 
+      transition-all duration-300 ease-in-out z-50">
                                 <Link href="/properties/residential" className="block px-4 py-2 hover:bg-orange-100 transition">Residential</Link>
                                 <Link href="/properties/commercial" className="block px-4 py-2 hover:bg-orange-100 transition">Commercial</Link>
                                 <Link href="/properties/luxury" className="block px-4 py-2 hover:bg-orange-100 transition">Luxury</Link>
                             </div>
                         </div>
+                        <Link href="/projects" className="hover:text-orange-400 transition">Projects</Link>
+                        <Link href="/our-works" className="hover:text-orange-400 transition">Our Work</Link>
                         <Link href="/about" className="hover:text-orange-400 transition">About</Link>
                         <Link href="/contact-us" className="hover:text-orange-400 transition">Contact Us</Link>
-                        <Link href="/blog" className="hover:text-orange-400 transition">Blog</Link>
-                        <Link href="/career" className="hover:text-orange-400 transition">Career</Link>
+
                     </nav>
+
 
                     {/* Mobile Hamburger Menu */}
                     <div className="block sm:hidden">
@@ -121,10 +119,10 @@ export default function HeaderNavbar() {
                                     <Link href="/properties/residential" className="hover:text-orange-400 transition">Residential</Link>
                                     <Link href="/properties/commercial" className="hover:text-orange-400 transition">Commercial</Link>
                                     <Link href="/properties/luxury" className="hover:text-orange-400 transition">Luxury</Link>
+                                    <Link href="/projects" className="hover:text-orange-400 transition">Projects</Link>
+                                    <Link href="/our-works" className="hover:text-orange-400 transition">Our Work</Link>
                                     <Link href="/about" className="hover:text-orange-400 transition">About</Link>
                                     <Link href="/contact-us" className="hover:text-orange-400 transition">Contact Us</Link>
-                                    <Link href="/blog" className="hover:text-orange-400 transition">Blog</Link>
-                                    <Link href="/career" className="hover:text-orange-400 transition">Career</Link>
                                 </nav>
                             </SheetContent>
                         </Sheet>
