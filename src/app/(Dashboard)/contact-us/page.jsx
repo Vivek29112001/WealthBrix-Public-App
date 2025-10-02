@@ -5,8 +5,8 @@ import ContactUsPage from '@/components/contact-us'
 
 const ContactUs = () => {
     return (
-        <PageContainer title="Contact Us" description="Get in touch with us">
-            <Breadcrumb childComponent={'Contact Us'} />
+        <PageContainer title="Contact-Us" description="Get in touch with us">
+            <Breadcrumb childComponent={'Contact-Us'} />
             <ContactUsPage />
         </PageContainer>
     )
