@@ -25,7 +25,7 @@ export default function ProjectsPage() {
                     pdfs: [
                         { name: "Orchid Brochure", url: "/assets/details/Orchid-Brochure.pdf" },
                         { name: "Orchid Booking Status", url: "/assets/details/Orchid-booking.pdf" },
-                        { name: "Orchid Price", url: "/assets/details/dhulera1.jpg" },
+                        { name: "Orchid Price", url: "/assets/details/dhuleraOne.jpg" },
                     ],
                     details: [
                         "Located in Dholera SIR, Ahmedabad",
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
                     pdfs: [
                         { name: "Airport Enclave Brochure", url: "/assets/details/Airport-Enclave-Brochure.pdf" },
                         { name: "Airport Enclave Status", url: "/assets/details/Airport-Enclave-Booking.pdf" },
-                        { name: "Airport-Enclave Price", url: "/assets/details/dhulera2.jpg" },
+                        { name: "Airport-Enclave Price", url: "/assets/details/dhuleraTwo.jpg" },
                     ],
                     details: [
                         "Close to upcoming Dholera International Airport",
@@ -223,3 +223,4 @@ export default function ProjectsPage() {
         </main>
     )
 }
+
