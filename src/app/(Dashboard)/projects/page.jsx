@@ -5,7 +5,7 @@ import ProjectsPage from '@/components/projects'
 
 const Projects = () => {
     return (
-        <PageContainer title="projects" description="Get in touch with us">
+        <PageContainer title="Projects" description="Projects">
             <Breadcrumb childComponent={'Projects'} />
             <ProjectsPage />
         </PageContainer>
@@ -13,3 +13,4 @@ const Projects = () => {
 }
 
 export default Projects
+
