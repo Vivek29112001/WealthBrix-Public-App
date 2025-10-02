@@ -21,7 +21,7 @@ export default function ProjectsPage() {
             subProjects: [
                 {
                     title: "Luxury Plot - Orchid",
-                    images: ["/assets/details/orchid-img.png"],
+                    images: ["/assets/details/orchid-img.PNG"],
                     pdfs: [
                         { name: "Orchid Brochure", url: "/assets/details/Orchid-Brochure.pdf" },
                         { name: "Orchid Booking Status", url: "/assets/details/Orchid-booking.pdf" },
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
                 },
                 {
                     title: "Airport Enclave",
-                    images: ["/assets/details/Airport-enclave-img.png"],
+                    images: ["/assets/details/Airport-enclave-img.PNG"],
                     pdfs: [
                         { name: "Airport Enclave Brochure", url: "/assets/details/Airport-Enclave-Brochure.pdf" },
                         { name: "Airport Enclave Status", url: "/assets/details/Airport-Enclave-Booking.pdf" },
@@ -223,5 +223,6 @@ export default function ProjectsPage() {
         </main>
     )
 }
+
 
 
