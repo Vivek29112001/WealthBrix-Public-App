@@ -5,9 +5,9 @@ import CommercialPropertiesPage from '@/components/properties/commercial'
 
 const Commercial = () => {
     return (
-        <PageContainer title="Commercial Properties" description="Commercial Properties">
+        <PageContainer title="Commercial-Properties" description="Commercial-Properties">
             <Breadcrumb
-                childComponent={'Commercial Properties'} />
+                childComponent={'Commercial-Properties'} />
             <CommercialPropertiesPage />
         </PageContainer>
     )
