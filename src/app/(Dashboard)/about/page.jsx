@@ -5,8 +5,8 @@ import AboutPage from '@/components/about'
 
 const About = () => {
     return (
-        <PageContainer title="About Us" description="About Us">
-            <Breadcrumb childComponent={'About Us'} />
+        <PageContainer title="About-Us" description="About-Us">
+            <Breadcrumb childComponent={'About-Us'} />
             <AboutPage />
         </PageContainer>
     )
