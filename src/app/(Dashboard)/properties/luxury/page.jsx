@@ -5,10 +5,9 @@ import LuxaryPropertiesPage from '@/components/properties/luxary'
 
 const Luxury = () => {
     return (
-        <PageContainer title="Luxury Properties" description="Luxury Properties">
+        <PageContainer title="Luxury-Properties" description="Luxury-Properties">
             <Breadcrumb
-                // parentComponent="Properties"
-                childComponent={'Luxury Properties'} />
+                childComponent={'Luxury-Properties'} />
             <LuxaryPropertiesPage />
         </PageContainer>
     )
