@@ -7,9 +7,9 @@ import ResidentialPropertiesPage from '@/components/properties/residential'
 
 const Residential = () => {
     return (
-        <PageContainer title="Residential Properties" description="Residential Properties">
+        <PageContainer title="Residential-Properties" description="Residential-Properties">
             <Breadcrumb
-                childComponent={'Residential Properties'} />
+                childComponent={'Residential-Properties'} />
             <ResidentialPropertiesPage />
         </PageContainer>
     )
