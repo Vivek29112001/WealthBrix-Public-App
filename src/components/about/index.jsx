@@ -179,37 +179,34 @@ export default function AboutPage() {
 
             {/* ================= LEADERSHIP ================= */}
             {/* ================= LEADERSHIP ================= */}
-            <section className="relative py-16 bg-gradient-to-b from-white to-slate-50">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-                        Leadership
-                    </h2>
-                    <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
-                        Guided by vision and grounded in experience — our founders bring a legacy of trust,
-                        wisdom, and client-first values to every project.
-                    </p>
+             <section className="relative py-16 bg-gradient-to-b from-white to-slate-50">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Leadership</h2>
+        <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
+          Guided by vision and grounded in experience — our founders bring a legacy of trust,
+          wisdom, and client-first values to every project.
+        </p>
 
-                    <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center items-start max-w-4xl mx-auto">
-                        {/* Vivek */}
-                        <Card className="group hover:shadow-xl transition-shadow rounded-2xl border border-gray-100 bg-white">
-                            <CardHeader className="text-center">
-                                <CardTitle className="text-xl font-bold text-orange-600">Mr. Vivek Kumar</CardTitle>
-                                <p className="text-sm text-slate-500">Co-Founder • Strategy</p>
-                            </CardHeader>
-                            <CardContent className="text-sm text-slate-700 text-center pb-6">
-                                <span className="inline-block mb-2 px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700">
-                                    15+ Years Experience
-                                </span>
-                                <p>
-                                    A trusted advisor with deep real-estate expertise.
-                                    Known for guiding countless families to the right investments
-                                    with precision and integrity.
-                                </p>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </div>
-            </section>
+        {/* Only Vivek's card — centered and single column */}
+        <div className="mt-12 max-w-sm mx-auto">
+          <Card className="group hover:shadow-xl transition-shadow rounded-2xl border border-gray-100 bg-white">
+            <CardHeader className="text-center">
+              <CardTitle className="text-xl font-bold text-orange-600">Mr. Vivek Kumar</CardTitle>
+              <p className="text-sm text-slate-500">Co-Founder • Strategy</p>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-700 text-center pb-6">
+              <span className="inline-block mb-2 px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700">
+                15+ Years Experience
+              </span>
+              <p>
+                A trusted advisor with deep real-estate expertise. Known for guiding countless families
+                to the right investments with precision and integrity.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
 
             {/* ================= MILESTONES ================= */}
             <section className="container mx-auto px-4 py-10">
