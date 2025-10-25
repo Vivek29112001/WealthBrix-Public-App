@@ -60,7 +60,7 @@ export default function AboutPage() {
                         style={{ color: "var(--luxury-text-muted)" }}
                     >
                         Though we officially started our journey in 2025, our foundation is built on <strong>over 15 years of experience</strong> in real estate.
-                        Mr. Vivek brings <strong>15+ years of wisdom</strong>, Ms. Rashmi adds <strong>8+ years of expertise</strong>.
+                        Mr. Vivek brings <strong>15+ years of wisdom</strong>.
                         Together, we blend deep knowledge with fresh energy to create homes, not just houses.
                     </motion.p>
 
@@ -131,8 +131,7 @@ export default function AboutPage() {
                             <p className="text-lg text-gray-700 leading-relaxed">
                                 Officially established in <strong>2025</strong>, our company carries the strength of
                                 <strong> 15+ years of real-estate expertise</strong>.
-                                With Mr. Vivek’s <strong>15+ years</strong> of deep industry insight and Ms. Rashmi’s
-                                <strong> 8+ years</strong> of client-focused experience, we offer a rare blend of
+                                With Mr. Vivek Kumar <strong>15+ years</strong> of deep industry insight ,we offer a rare blend of
                                 <span className="text-orange-600 font-semibold"> wisdom and innovation</span>.
                             </p>
 
@@ -191,11 +190,10 @@ export default function AboutPage() {
                     </p>
 
                     <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center items-start max-w-4xl mx-auto">
-
                         {/* Vivek */}
                         <Card className="group hover:shadow-xl transition-shadow rounded-2xl border border-gray-100 bg-white">
                             <CardHeader className="text-center">
-                                <CardTitle className="text-xl font-bold text-orange-600">Mr. Vivek</CardTitle>
+                                <CardTitle className="text-xl font-bold text-orange-600">Mr. Vivek Kumar</CardTitle>
                                 <p className="text-sm text-slate-500">Co-Founder • Strategy</p>
                             </CardHeader>
                             <CardContent className="text-sm text-slate-700 text-center pb-6">
@@ -209,25 +207,6 @@ export default function AboutPage() {
                                 </p>
                             </CardContent>
                         </Card>
-
-                        {/* Rashmi */}
-                        <Card className="group hover:shadow-xl transition-shadow rounded-2xl border border-gray-100 bg-white">
-                            <CardHeader className="text-center">
-                                <CardTitle className="text-xl font-bold text-orange-600">Ms. Rashmi</CardTitle>
-                                <p className="text-sm text-slate-500">Co-Founder • Client Relations</p>
-                            </CardHeader>
-                            <CardContent className="text-sm text-slate-700 text-center pb-6">
-                                <span className="inline-block mb-2 px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700">
-                                    8+ Years Experience
-                                </span>
-                                <p>
-                                    A client-focused leader bringing empathy and transparency.
-                                    Ensures every customer’s journey is seamless, trustworthy,
-                                    and stress-free.
-                                </p>
-                            </CardContent>
-                        </Card>
-
                     </div>
                 </div>
             </section>
