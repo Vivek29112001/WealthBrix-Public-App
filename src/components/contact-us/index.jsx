@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
+import emailjs from "@emailjs/browser"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -9,23 +10,54 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
+// Initialize EmailJS
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "")
+
 export default function ContactUsPage() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         message: "",
     })
+    const [isLoading, setIsLoading] = useState(false)
+    const [message, setMessage] = useState({ type: "", text: "" })
 
     const handleChange = (e) => {
         const { id, value } = e.target
         setFormData((prev) => ({ ...prev, [id]: value }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("Form submitted:", formData)
-        alert("Your message has been sent!")
-        setFormData({ name: "", email: "", message: "" })
+        setIsLoading(true)
+        setMessage({ type: "", text: "" })
+
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    message: formData.message,
+                    to_email: "vivek@wealthbrix.in",
+                }
+            )
+
+            setMessage({
+                type: "success",
+                text: "Your message has been sent successfully! We'll get back to you soon.",
+            })
+            setFormData({ name: "", email: "", message: "" })
+        } catch (error) {
+            console.error("EmailJS Error:", error)
+            setMessage({
+                type: "error",
+                text: "Failed to send message. Please try again or contact us directly.",
+            })
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     return (
@@ -37,7 +69,7 @@ export default function ContactUsPage() {
                         Contact Us
                     </h4>
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mt-2">
-                        We’re Just a Call Away
+                        We're Just a Call Away
                     </h1>
                     <div className="mx-auto h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full mt-4"></div>
                     <p className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
@@ -90,7 +122,7 @@ export default function ContactUsPage() {
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d28023.633458002536!2d77.432393!3d28.6011513!3m2!1i1024!2i768!4f13.1!2m1!1sNx%20One%20Tower%20T2%20A02%20Tech%20Xone%204%20Greater%20Noida%20UttarPradesh%20201301%20map%20location!5e0!3m2!1sen!2sin!4v1755337333829!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d28023.633458002536!2d77.432393!3d28.6011513!3m2!1i1024!2i768!4f13.1!2m1!1sNx%20One%20Tower%20T2%20A02%20Tech%2[...]"
                             width="100%"
                             height="280"
                             style={{ border: 0 }}
@@ -113,6 +145,19 @@ export default function ContactUsPage() {
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
+                            {message.text && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className={`mb-4 p-3 rounded-lg text-sm font-medium ${
+                                        message.type === "success"
+                                            ? "bg-green-50 text-green-700"
+                                            : "bg-red-50 text-red-700"
+                                    }`}
+                                >
+                                    {message.text}
+                                </motion.div>
+                            )}
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="space-y-2">
                                     <Label htmlFor="name">Name</Label>
@@ -123,6 +168,7 @@ export default function ContactUsPage() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
+                                        disabled={isLoading}
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -134,6 +180,7 @@ export default function ContactUsPage() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
+                                        disabled={isLoading}
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -145,14 +192,16 @@ export default function ContactUsPage() {
                                         value={formData.message}
                                         onChange={handleChange}
                                         required
+                                        disabled={isLoading}
                                     />
                                 </div>
                                 <motion.div whileHover={{ scale: 1.02 }}>
                                     <Button
                                         type="submit"
-                                        className="w-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold py-3 rounded-lg"
+                                        disabled={isLoading}
+                                        className="w-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold py-3 rounded-lg disabled:opacity-60 disabled:cursor-not-allowed"
                                     >
-                                        Send Message
+                                        {isLoading ? "Sending..." : "Send Message"}
                                     </Button>
                                 </motion.div>
                             </form>
