@@ -1,214 +1,265 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
+import React, { useState } from "react"
 import emailjs from "@emailjs/browser"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Mail, Phone, MapPin, Clock } from "lucide-react"
 
 // Initialize EmailJS
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "")
 
-export default function ContactUsPage() {
+const ContactUsPage = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        phone: "",
         message: "",
     })
-    const [isLoading, setIsLoading] = useState(false)
-    const [message, setMessage] = useState({ type: "", text: "" })
+    const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState("")
+    const [error, setError] = useState("")
 
     const handleChange = (e) => {
-        const { id, value } = e.target
-        setFormData((prev) => ({ ...prev, [id]: value }))
+        const { name, value } = e.target
+        setFormData({ ...formData, [name]: value })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setIsLoading(true)
-        setMessage({ type: "", text: "" })
+        setLoading(true)
+        setMessage("")
+        setError("")
 
         try {
-            await emailjs.send(
+            const templateParams = {
+                to_email: "vivek@wealthbrix.in",
+                from_name: formData.name,
+                from_email: formData.email,
+                from_phone: formData.phone,
+                message: formData.message,
+                reply_to: formData.email,
+            }
+
+            const response = await emailjs.send(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-                {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    message: formData.message,
-                    to_email: "vivek@wealthbrix.in",
-                }
+                templateParams
             )
 
-            setMessage({
-                type: "success",
-                text: "Your message has been sent successfully! We'll get back to you soon.",
-            })
-            setFormData({ name: "", email: "", message: "" })
-        } catch (error) {
-            console.error("EmailJS Error:", error)
-            setMessage({
-                type: "error",
-                text: "Failed to send message. Please try again or contact us directly.",
-            })
+            if (response.status === 200) {
+                setMessage("✅ Your message has been sent successfully! We'll get back to you soon.")
+                setFormData({ name: "", email: "", phone: "", message: "" })
+            }
+        } catch (err) {
+            console.error("EmailJS Error:", err)
+            setError("❌ Failed to send message. Please try again or contact us directly.")
         } finally {
-            setIsLoading(false)
+            setLoading(false)
         }
     }
 
     return (
-        <main className="min-h-screen bg-white">
-            {/* ================= HEADER ================= */}
-            <section className="relative py-20 border-b">
-                <div className="container mx-auto px-6 text-center">
-                    <h4 className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent font-semibold tracking-widest uppercase">
-                        Contact Us
-                    </h4>
-                    <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mt-2">
-                        We're Just a Call Away
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4">
+            <div className="max-w-6xl mx-auto">
+                {/* Header */}
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Get In Touch
                     </h1>
-                    <div className="mx-auto h-1 w-20 bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full mt-4"></div>
-                    <p className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
-                        Have questions or need assistance? Get in touch with us — our team is here to help you 7 days a week.
+                    <p className="text-lg text-gray-600">
+                        Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                     </p>
                 </div>
-            </section>
 
-            {/* ================= CONTENT ================= */}
-            <section className="container mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12">
-                {/* Contact Info */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="space-y-8"
-                >
-                    <Card className="shadow-lg rounded-2xl border border-gray-100">
-                        <CardContent className="space-y-6 py-8">
-                            <div className="flex items-center gap-3">
-                                <Phone className="h-5 w-5 text-orange-500" />
-                                <a className="hover:underline text-slate-700">
-                                    +91 99719 00065 | +91 92209 30065
-                                </a>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <Mail className="h-5 w-5 text-orange-500" />
-                                <a className="hover:underline text-slate-700">
-                                    vivek@wealthbrix.in
-                                </a>
-                            </div>
-                            <div className="flex items-start gap-3">
-                                <MapPin className="h-5 w-5 text-orange-500 mt-1" />
-                                <p className="text-slate-700">
-                                    Nx One, Tower T2, A02, Tech Xone 4 <br /> Greater Noida, Uttar Pradesh 201301
-                                </p>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <Clock className="h-5 w-5 text-orange-500" />
-                                <p className="text-slate-700">Mon - Sun: 9:00 AM - 7:00 PM</p>
-                            </div>
-                        </CardContent>
-                    </Card>
+                {/* Content */}
+                <div className="grid md:grid-cols-2 gap-8">
+                    {/* Contact Info */}
+                    <div className="space-y-6">
+                        {/* Info Card */}
+                        <Card className="shadow-lg border-0">
+                            <CardContent className="p-8">
+                                <div className="space-y-6">
+                                    {/* Phone */}
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-orange-100 p-3 rounded-lg">
+                                            <Phone className="h-6 w-6 text-orange-600" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-semibold text-gray-900">Phone</h3>
+                                            <p className="text-gray-600 mt-1">+91 99719 00065</p>
+                                            <p className="text-gray-600">+91 92209 30065</p>
+                                        </div>
+                                    </div>
 
-                    {/* Google Map */}
-                    <motion.div
-                        className="overflow-hidden rounded-2xl shadow-md"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                    >
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d28023.633458002536!2d77.432393!3d28.6011513!3m2!1i1024!2i768!4f13.1!2m1!1sNx%20One%20Tower%20T2%20A02%20Tech%2[...]"
-                            width="100%"
-                            height="280"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                        ></iframe>
-                    </motion.div>
-                </motion.div>
+                                    {/* Email */}
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-orange-100 p-3 rounded-lg">
+                                            <Mail className="h-6 w-6 text-orange-600" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-semibold text-gray-900">Email</h3>
+                                            <p className="text-gray-600 mt-1">vivek@wealthbrix.in</p>
+                                        </div>
+                                    </div>
 
-                {/* Contact Form */}
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <Card className="shadow-lg rounded-2xl border border-gray-100">
-                        <CardHeader>
-                            <CardTitle className="text-xl font-semibold text-orange-600">
-                                Send us a Message
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            {message.text && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className={`mb-4 p-3 rounded-lg text-sm font-medium ${
-                                        message.type === "success"
-                                            ? "bg-green-50 text-green-700"
-                                            : "bg-red-50 text-red-700"
-                                    }`}
-                                >
-                                    {message.text}
-                                </motion.div>
-                            )}
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="space-y-2">
-                                    <Label htmlFor="name">Name</Label>
-                                    <Input
-                                        id="name"
-                                        type="text"
-                                        placeholder="Your Name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                        disabled={isLoading}
-                                    />
+                                    {/* Address */}
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-orange-100 p-3 rounded-lg">
+                                            <MapPin className="h-6 w-6 text-orange-600" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-semibold text-gray-900">Address</h3>
+                                            <p className="text-gray-600 mt-1">
+                                                NX One Tower T2, Unit A02<br />
+                                                Tech Zone 4, Greater Noida West<br />
+                                                Uttar Pradesh - 201318, India
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Hours */}
+                                    <div className="flex items-start gap-4">
+                                        <div className="bg-orange-100 p-3 rounded-lg">
+                                            <Clock className="h-6 w-6 text-orange-600" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-semibold text-gray-900">Business Hours</h3>
+                                            <p className="text-gray-600 mt-1">Monday - Sunday</p>
+                                            <p className="text-gray-600">9:00 AM - 7:00 PM IST</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="email">Email</Label>
-                                    <Input
-                                        id="email"
-                                        type="email"
-                                        placeholder="Your Email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        disabled={isLoading}
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="message">Message</Label>
-                                    <Textarea
-                                        id="message"
-                                        placeholder="Your Message"
-                                        rows={4}
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        required
-                                        disabled={isLoading}
-                                    />
-                                </div>
-                                <motion.div whileHover={{ scale: 1.02 }}>
+                            </CardContent>
+                        </Card>
+
+                        {/* Map */}
+                        <div className="rounded-lg overflow-hidden shadow-lg h-80">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.8067945809524!2d77.43239!3d28.601151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sNX%20One%20Tower%20T2!2sGreater%20Noida%20West%2C%20Uttar%20Pradesh"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    {/* Contact Form */}
+                    <div>
+                        <Card className="shadow-lg border-0">
+                            <CardHeader className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+                                <CardTitle className="text-2xl">Send us a Message</CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-8">
+                                {message && (
+                                    <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                                        {message}
+                                    </div>
+                                )}
+                                {error && (
+                                    <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                                        {error}
+                                    </div>
+                                )}
+
+                                <form onSubmit={handleSubmit} className="space-y-4">
+                                    {/* Name */}
+                                    <div>
+                                        <Label htmlFor="name" className="text-gray-700 font-medium">
+                                            Full Name *
+                                        </Label>
+                                        <Input
+                                            id="name"
+                                            name="name"
+                                            type="text"
+                                            placeholder="Your Name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            required
+                                            disabled={loading}
+                                            className="mt-2 border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                                        />
+                                    </div>
+
+                                    {/* Email */}
+                                    <div>
+                                        <Label htmlFor="email" className="text-gray-700 font-medium">
+                                            Email Address *
+                                        </Label>
+                                        <Input
+                                            id="email"
+                                            name="email"
+                                            type="email"
+                                            placeholder="your.email@example.com"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            required
+                                            disabled={loading}
+                                            className="mt-2 border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                                        />
+                                    </div>
+
+                                    {/* Phone */}
+                                    <div>
+                                        <Label htmlFor="phone" className="text-gray-700 font-medium">
+                                            Phone Number
+                                        </Label>
+                                        <Input
+                                            id="phone"
+                                            name="phone"
+                                            type="tel"
+                                            placeholder="+91 9XXXXXXXXX"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            disabled={loading}
+                                            className="mt-2 border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                                        />
+                                    </div>
+
+                                    {/* Message */}
+                                    <div>
+                                        <Label htmlFor="message" className="text-gray-700 font-medium">
+                                            Message *
+                                        </Label>
+                                        <Textarea
+                                            id="message"
+                                            name="message"
+                                            placeholder="Tell us more about your inquiry..."
+                                            rows={5}
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            required
+                                            disabled={loading}
+                                            className="mt-2 border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                                        />
+                                    </div>
+
+                                    {/* Submit Button */}
                                     <Button
                                         type="submit"
-                                        disabled={isLoading}
-                                        className="w-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold py-3 rounded-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                                        disabled={loading}
+                                        className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed mt-6"
                                     >
-                                        {isLoading ? "Sending..." : "Send Message"}
+                                        {loading ? "Sending..." : "Send Message"}
                                     </Button>
-                                </motion.div>
-                            </form>
-                        </CardContent>
-                    </Card>
-                </motion.div>
-            </section>
-        </main>
+
+                                    <p className="text-sm text-gray-500 text-center mt-4">
+                                        * Required fields
+                                    </p>
+                                </form>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
+
+export default ContactUsPage
