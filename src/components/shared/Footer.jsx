@@ -39,22 +39,22 @@ export default function Footer() {
                         className="h-12 w-auto object-contain drop-shadow-lg"
                     />
                     <p className="text-sm leading-relaxed" style={{ color: "#b3a87e" }}>
-                        Building future, brick by brick — premium residential, commercial &amp; luxury
+                        Building future, brick by brick — premium residential, commercial & luxury
                         real estate across Uttarakhand and NCR.
                     </p>
                     <div className="flex gap-4 pt-1">
-                        <Link href="https://www.facebook.com/p/Wealth-brix-61574633926093/" target="_blank" aria-label="Facebook" className="hover:text-[#d4af37] transition">
+                        <a href="https://www.facebook.com/p/Wealth-brix-61574633926093/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-[#d4af37] transition">
                             <FaFacebook className="h-5 w-5" />
-                        </Link>
-                        <Link href="https://www.youtube.com/@WealthBrix" target="_blank" aria-label="YouTube" className="hover:text-[#d4af37] transition">
+                        </a>
+                        <a href="https://www.youtube.com/@WealthBrix" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-[#d4af37] transition">
                             <FaYoutube className="h-5 w-5" />
-                        </Link>
-                        <Link href="#" target="_blank" aria-label="Instagram" className="hover:text-[#d4af37] transition">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-[#d4af37] transition">
                             <FaInstagram className="h-5 w-5" />
-                        </Link>
-                        <Link href="#" target="_blank" aria-label="LinkedIn" className="hover:text-[#d4af37] transition">
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-[#d4af37] transition">
                             <FaLinkedin className="h-5 w-5" />
-                        </Link>
+                        </a>
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@ export default function Footer() {
                     <ul className="space-y-4">
                         {sisterProjects.map((p) => (
                             <li key={p.url}>
-                                <Link
+                                <a
                                     href={p.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -93,7 +93,7 @@ export default function Footer() {
                                         </span>
                                         <span className="text-xs" style={{ color: "#b3a87e" }}>{p.tagline}</span>
                                     </div>
-                                </Link>
+                                </a>
                             </li>
                         ))}
                     </ul>
@@ -127,14 +127,14 @@ export default function Footer() {
                     <p>© {new Date().getFullYear()} Wealth Brix. All rights reserved.</p>
                     <p className="flex items-center gap-1">
                         Made with <span style={{ color: "#d4af37" }}>❤</span> by{" "}
-                        <Link
+                        <a
                             href="https://www.vyteq.in/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="font-semibold hover:text-[#d4af37] transition"
                         >
                             Vyteq
-                        </Link>
+                        </a>
                     </p>
                 </div>
             </div>
